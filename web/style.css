@@ -1,0 +1,138 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Consolas, monospace;
+}
+
+.link {
+    font-size: 4rem;
+    font-weight: bold;
+
+    background-image: linear-gradient(-45deg, rgb(14, 223, 223), rgb(18, 18, 177), rgb(14, 223, 223));
+    background-clip: text;
+    color: transparent;
+
+    background-size: 400% 400%;
+	animation: gradient 5s linear infinite;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+.link:hover {
+    text-decoration: underline;
+}
+
+#loading {
+    z-index: -1;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 0%;
+    background-color: #242427;
+}
+
+html {
+    box-sizing: border-box;
+
+    background-color: #18181B;
+    color: white;
+}
+
+p {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #eee;
+}
+
+.entire {
+    width: 100vw;
+    height: 100vh;
+}
+
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.rotating {
+    position: absolute;
+    left: calc(50% - 32px);
+    top: calc(50% - 32px);
+    width: 64px;
+    height: 64px;
+    animation: rotate 10s infinite linear;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.rotating:nth-child(2) {
+    animation-delay: -2.5s;
+}
+
+.rotating:nth-child(2) > .arrow {
+    animation-delay: 0.1s;
+}
+
+.rotating:nth-child(3) {
+    animation-delay: -5s;
+}
+
+.rotating:nth-child(3) > .arrow {
+    animation-delay: 0.2s;
+}
+
+.rotating:nth-child(4) {
+    animation-delay: -7.5s;
+}
+
+.rotating:nth-child(4) > .arrow {
+    animation-delay: 0.3s;
+}
+
+.arrow {
+    border: solid white;
+    border-width: 0 9px 9px 0;
+    display: inline-block;
+    padding: 9px;
+    animation: approach 2s infinite ease;
+}
+
+.approach {
+    transform: scale(0);
+}
+
+@keyframes approach {
+    0% {
+        transform: translate(-256px) rotate(-45deg);
+    }
+    50% {
+        transform: translate(-128px) rotate(-45deg);
+    }
+    100% {
+        transform: translate(-256px) rotate(-45deg);
+    }
+}
+
+.hidden {
+    display: none;
+}
